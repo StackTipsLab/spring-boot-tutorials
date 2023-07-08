@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Slf4j
-//@Component
+@Component
 public class MyComponent {
 
     @PostConstruct
