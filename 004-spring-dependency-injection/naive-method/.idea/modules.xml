@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/without-di-example.iml" filepath="$PROJECT_DIR$/without-di-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/naive-method.iml" filepath="$PROJECT_DIR$/naive-method.iml" />
     </modules>
   </component>
 </project>
