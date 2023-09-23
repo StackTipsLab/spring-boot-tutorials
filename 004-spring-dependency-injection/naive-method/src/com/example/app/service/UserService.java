@@ -4,12 +4,12 @@ import com.example.app.model.User;
 
 public class UserService {
 
-    private final EmailService emailService;
     private final UserDao userDao;
+    private final EmailService emailService;
 
     public UserService() {
-        emailService = new EmailService();
         userDao = new UserDao();
+        emailService = new EmailService();
     }
 
     public void registerUser(User user) {

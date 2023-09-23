@@ -12,6 +12,10 @@ public class ShoppingCartService {
     }
 
     public void checkout(Product product, User user) {
+        //Logic to check out the product
+
+        //Payment verification
+
         emailService.emailUser("Order placed successfully for " + product.getName(),
                 user.getEmail(),
                 "test-email-template.html");
