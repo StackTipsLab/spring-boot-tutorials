@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    cache: false
+    suffix: .html
+
+eventful:
+  api:
+    base-url: http://api.eventful.com/
+    app-key: LjvfKckZVRjjqxvK
+
+logging:
+  level:
+    org.springframework: info
+    com.abc: debug
+
+management:
+  endpoint:
+    health:
+      enabled: true
