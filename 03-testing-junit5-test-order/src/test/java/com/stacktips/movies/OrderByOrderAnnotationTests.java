@@ -8,7 +8,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class OrderByOrderAnnotationTests {
+class OrderByOrderAnnotationTests {
 
     @Test
     @Order(1)

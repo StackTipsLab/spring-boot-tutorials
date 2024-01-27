@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class GreetingsControllerTest {
+class GreetingControllerWithSpringContextTest {
 
     @LocalServerPort
     private int port;
@@ -23,7 +23,7 @@ class GreetingsControllerTest {
     void greetingShouldReturnDefaultMessage() throws Exception {
         String result = this.restTemplate.getForObject("http://localhost:" + port + "/",
                 String.class);
-        assertThat(result, is("Hello, World"));
+        assertThat(result, is("Hello, Spring Boot!"));
     }
 
 }
