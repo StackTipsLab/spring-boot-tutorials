@@ -1,0 +1,18 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/movies?locale=en
+      username:
+      password:
+
+#Setting Open API path
+springdoc:
+  api-docs:
+    path: /api-docs
+
+#Expose all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

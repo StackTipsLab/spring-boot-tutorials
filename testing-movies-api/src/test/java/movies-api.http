@@ -26,6 +26,10 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8080/api/1.0/movies
+Content-Type: application/json
+Accept: application/json
 
 ###
 GET http://localhost:8080/api/1.0/movies/64b152e16a386772c6453c94
+Content-Type: application/json
+Accept: application/json
