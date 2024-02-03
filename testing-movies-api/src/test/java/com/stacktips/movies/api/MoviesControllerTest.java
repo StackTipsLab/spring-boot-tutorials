@@ -75,8 +75,6 @@ class MoviesControllerTest {
 
     @Test
     void testGetMoviesWhenXmlContentType() throws Exception {
-        when(movieService.getMovies()).thenReturn(movies);
-
         mockMvc.perform(get("/api/1.0/movies").contentType(MediaType.APPLICATION_XML))
                 .andExpect(status().isUnsupportedMediaType());
     }

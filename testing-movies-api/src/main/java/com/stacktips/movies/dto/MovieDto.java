@@ -11,7 +11,6 @@ public class MovieDto {
     @NotEmpty
     @NotNull
     private String title;
-
     private String headline;
     private String thumbnail;
     private String language;
