@@ -1,0 +1,25 @@
+GET http://127.0.0.1:8080/api-docs/1.1/projects
+
+<> 2023-10-09T142605.500.json
+
+###
+
+GET http://127.0.0.1:8080/api-docs2/v3/api-docs
+Accept: application/json
+
+<> 2023-10-11T000413.200.json
+
+###
+
+GET http://127.0.0.1:8080/api-docs2/swagger-ui.html
+
+<> 2023-10-11T000432.200.html
+
+###
+
+GET http://127.0.0.1:8080/api-docs2/
+
+<> 2023-10-11T090801.200.html
+
+###
+

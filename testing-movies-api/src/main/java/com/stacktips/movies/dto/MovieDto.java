@@ -1,12 +1,17 @@
 package com.stacktips.movies.dto;
 
 import com.stacktips.movies.models.ContentRating;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
 public class MovieDto {
 
+    @NotEmpty
+    @NotNull
     private String title;
+
     private String headline;
     private String thumbnail;
     private String language;

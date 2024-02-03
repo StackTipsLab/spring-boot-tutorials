@@ -28,7 +28,7 @@ public class MoviesController {
         this.movieService = movieService;
     }
 
-    @GetMapping
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public List<Movie> getMovies() {
         return movieService.getMovies();
     }

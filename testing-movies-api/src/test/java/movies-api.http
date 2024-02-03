@@ -1,0 +1,31 @@
+###
+POST /api/1.0/movies HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+        "id": "64b152e16a386772c6453c94",
+        "title": "Iron Man & Captain America: Heroes United",
+        "headline": "Iron Man (Adrian Pasdar) and Captain America (Roger Craig Smith) must prevent Red Skull (Liam O'Brien) and Taskmaster (Clancy Brown) from destroying the world.",
+        "thumbnail": "https://resizing.flixster.com/87tpyGxlB1hTQPaSfM2bgyue1PI=/300x300/v2/https://flxt.tmsimg.com/assets/p10906420_v_h9_aa.jpg",
+        "language": "EN",
+        "region": "USA",
+        "actors": [
+            "David Kaye",
+            "Ian McKellen",
+            "Adrian Pasdar"
+        ],
+        "genres": [
+            "Action",
+            "Adventure",
+            "Sci-fi"
+        ],
+        "rating": "G"
+    }
+
+
+###
+GET http://localhost:8080/api/1.0/movies
+
+###
+GET http://localhost:8080/api/1.0/movies/64b152e16a386772c6453c94
