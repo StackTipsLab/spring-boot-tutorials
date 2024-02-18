@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.stacktips.movies.MovieService3Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-01-26T15:22:31" hostname="GB3TRDM0XW6HV" time="0.019">
+  <properties/>
+  <testcase name="1 ==&gt; product=iPhone 15, price=999" classname="com.stacktips.movies.MovieService3Tests" time="0.012"/>
+  <testcase name="2 ==&gt; product=Mx Master 3S, price=89" classname="com.stacktips.movies.MovieService3Tests" time="0.0"/>
+  <testcase name="1 ==&gt; product=iPhone 15" classname="com.stacktips.movies.MovieService3Tests" time="0.001"/>
+  <testcase name="2 ==&gt; product=Mx Master 3S" classname="com.stacktips.movies.MovieService3Tests" time="0.001"/>
+  <testcase name="testMethod1" classname="com.stacktips.movies.MovieService3Tests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

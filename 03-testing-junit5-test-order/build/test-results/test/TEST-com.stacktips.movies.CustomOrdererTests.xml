@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.stacktips.movies.CustomOrdererTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-01-26T22:14:55" hostname="GB3TRDM0XW6HV" time="0.018">
+  <properties/>
+  <testcase name="1 ==&gt; product=iPhone 15, price=999" classname="com.stacktips.movies.CustomOrdererTests" time="0.012"/>
+  <testcase name="2 ==&gt; product=Mx Master 3S, price=89" classname="com.stacktips.movies.CustomOrdererTests" time="0.001"/>
+  <testcase name="1 ==&gt; product=iPhone 15" classname="com.stacktips.movies.CustomOrdererTests" time="0.001"/>
+  <testcase name="2 ==&gt; product=Mx Master 3S" classname="com.stacktips.movies.CustomOrdererTests" time="0.001"/>
+  <testcase name="testMethod1" classname="com.stacktips.movies.CustomOrdererTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
