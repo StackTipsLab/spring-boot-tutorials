@@ -36,3 +36,4 @@ out/
 ### VS Code ###
 .vscode/
 /build.gradle
+.DS_Store
