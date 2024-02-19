@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class QuartzSchedulerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(QuartzSchedulerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(QuartzSchedulerApplication.class, args);
+    }
 
 }
