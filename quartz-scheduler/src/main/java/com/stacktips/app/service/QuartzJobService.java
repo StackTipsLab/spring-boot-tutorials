@@ -62,5 +62,4 @@ public class QuartzJobService {
         scheduler.deleteJob(JobKey.jobKey(jobName, jobGroup));
     }
 
-
 }

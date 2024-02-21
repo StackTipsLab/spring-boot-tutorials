@@ -9,7 +9,7 @@ import org.springframework.boot.actuate.endpoint.annotation.WriteOperation;
 import org.springframework.stereotype.Component;
 
 @Component
-@Endpoint(id = "quartz-jobs")
+@Endpoint(id = "manage/jobs")
 public class QuartzJobEndpoint {
 
     private static final Logger log = LoggerFactory.getLogger(QuartzJobEndpoint.class);
@@ -29,7 +29,7 @@ public class QuartzJobEndpoint {
                 quartzJobService.stopJob(jobName, jobGroup);
             }
         } catch (SchedulerException e) {
-            log.error("Error: {}", e.getMessage());
+            log.error("Error while managing job", e);
         }
     }
 }

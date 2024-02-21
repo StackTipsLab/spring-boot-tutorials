@@ -1,0 +1,36 @@
+<movies>
+    <movie>
+        <id>65c4092af4ba290f3c55cd06</id>
+        <title>Iron Man &amp; Captain America: Heroes United</title>
+        <headline>Iron Man (Adrian Pasdar) and Captain America (Roger Craig Smith) must prevent Red Skull (Liam O'Brien) and Taskmaster (Clancy Brown) from destroying the world.</headline>
+        <language>EN</language>
+        <region>USA</region>
+        <actors>
+            <actors>David Kaye</actors>
+            <actors>Ian McKellen</actors>
+            <actors>Adrian Pasdar</actors>
+        </actors>
+        <genres>
+            <genres>Action</genres>
+            <genres>Adventure</genres>
+            <genres>Sci-fi</genres>
+        </genres>
+    </movie>
+    <movie>
+        <id>65c4092af4ba290f3c55cd07</id>
+        <title>Iron Man &amp; Captain America: Heroes United</title>
+        <headline>Iron Man (Adrian Pasdar) and Captain America (Roger Craig Smith) must prevent Red Skull (Liam O'Brien) and Taskmaster (Clancy Brown) from destroying the world.</headline>
+        <language>EN</language>
+        <region>USA</region>
+        <actors>
+            <actors>David Kaye</actors>
+            <actors>Ian McKellen</actors>
+            <actors>Adrian Pasdar</actors>
+        </actors>
+        <genres>
+            <genres>Action</genres>
+            <genres>Adventure</genres>
+            <genres>Sci-fi</genres>
+        </genres>
+    </movie>
+</movies>
