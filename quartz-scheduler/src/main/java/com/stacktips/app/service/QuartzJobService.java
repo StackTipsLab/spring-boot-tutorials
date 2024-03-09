@@ -2,6 +2,7 @@ package com.stacktips.app.service;
 
 import com.stacktips.app.tasks.CsvImportInterruptableJob;
 import org.quartz.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -26,6 +26,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -131,6 +132,20 @@ class MoviesControllerTest {
                 .andExpect(jsonPath("$.actors", containsInAnyOrder("Ian McKellen", "David Kaye")));
 
         verify(movieService).createMovie(any(MovieDto.class));
+    }
+
+
+    @Test
+    void testUpdateMovieWhenIdNotFound() throws Exception {
+        String movieId = "test_id";
+        MovieDto movieDto = mockMovieDto("Iron Man", "EN", List.of("David Kaye", "Ian McKellen"), PG13);
+        when(movieService.updateMovie(movieId, movieDto))
+                .thenThrow(new MovieNotFoundException("whatever"));
+
+        mockMvc.perform(patch("/api/1.0/movies/{movieId}", movieId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(movieDto)))
+                .andExpect(status().isNotFound());
     }
 
     private Movie mockMovie(String id, String title, String language, List<String> actors, ContentRating rating) {

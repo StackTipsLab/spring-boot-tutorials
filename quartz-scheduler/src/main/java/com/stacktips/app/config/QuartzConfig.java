@@ -5,6 +5,10 @@ import org.quartz.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 @Configuration
 public class QuartzConfig {
 
@@ -27,23 +31,23 @@ public class QuartzConfig {
     }
 
 
-    /*
+
     // Commented out in favour of Cron based trigger
 
-    @Bean
-    public Trigger csvImportJobTrigger(JobDetail csvImportJob) {
-        Date afterFiveSeconds = Date.from(LocalDateTime.now().plusSeconds(5)
-                .atZone(ZoneId.systemDefault()).toInstant());
-
-        return TriggerBuilder.newTrigger()
-                .forJob(csvImportJob)
-                .startAt(afterFiveSeconds)
-                .withIdentity("simpleTrigger")
-                .withSchedule(SimpleScheduleBuilder.simpleSchedule()
-                        .withIntervalInSeconds(60)
-                        .repeatForever())
-                .build();
-    }*/
+//    @Bean
+//    public Trigger csvImportJobTrigger(JobDetail csvImportJob) {
+//        Date afterFiveSeconds = Date.from(LocalDateTime.now().plusSeconds(5)
+//                .atZone(ZoneId.systemDefault()).toInstant());
+//
+//        return TriggerBuilder.newTrigger()
+//                .forJob(csvImportJob)
+//                .startAt(afterFiveSeconds)
+//                .withIdentity("simpleTrigger")
+//                .withSchedule(SimpleScheduleBuilder.simpleSchedule()
+//                        .withIntervalInSeconds(60)
+//                        .repeatForever())
+//                .build();
+//    }
 
 
 }

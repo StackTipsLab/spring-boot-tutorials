@@ -1,9 +1,6 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/movies?locale=en
-      username:
-      password:
+  profiles:
+    active: dev
 
 #Setting Open API path
 springdoc:
@@ -16,3 +13,6 @@ management:
     web:
       exposure:
         include: '*'
+
+movies-api:
+  version: 2.0

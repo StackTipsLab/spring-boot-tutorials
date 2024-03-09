@@ -24,7 +24,7 @@ public class CsvImportJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
             JobDataMap dataMap = context.getJobDetail().getJobDataMap();
-            String param = dataMap.getString("param");
+            String param = dataMap.getString("arg1");
 
             log.info("CsvImportJob started with param: {}", param);
             importService.readBooks();

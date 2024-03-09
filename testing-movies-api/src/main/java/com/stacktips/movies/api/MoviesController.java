@@ -19,7 +19,7 @@ import java.util.List;
 
 @Tag(name = "Movies")
 @RestController
-@RequestMapping(value = "/api/1.0/movies", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(value = "/api/${movies-api.version}/movies", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class MoviesController {
 
     private final MovieService movieService;
