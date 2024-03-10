@@ -1,0 +1,9 @@
+2024-03-10T23:22:14.309Z  INFO 85229 --- [main] com.stacktips.app.MyApplication          : Starting MyApplication using Java 17.0.7 with PID 85229 (/Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging/build/classes/java/main started by nilanchala in /Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging)
+2024-03-10T23:22:14.311Z DEBUG 85229 --- [main] com.stacktips.app.MyApplication          : Running with Spring Boot v3.2.3, Spring v6.1.4
+2024-03-10T23:22:14.312Z  INFO 85229 --- [main] com.stacktips.app.MyApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-03-10T23:22:15.168Z  INFO 85229 --- [main] com.stacktips.app.MyApplication          : Started MyApplication in 1.062 seconds (process running for 1.335)
+2024-03-10T23:22:15.171Z DEBUG 85229 --- [main] com.stacktips.app.MyApplication          : DEBUG message
+2024-03-10T23:22:15.171Z  INFO 85229 --- [main] com.stacktips.app.MyApplication          : INFO message
+2024-03-10T23:22:15.171Z  WARN 85229 --- [main] com.stacktips.app.MyApplication          : WARNING message
+2024-03-10T23:22:15.171Z ERROR 85229 --- [main] com.stacktips.app.MyApplication          : ERROR message
+2024-03-10T23:22:15.171Z ERROR 85229 --- [main] com.stacktips.app.MyApplication          : FATAL message
