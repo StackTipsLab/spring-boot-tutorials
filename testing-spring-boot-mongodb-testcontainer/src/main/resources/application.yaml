@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/movies_db
+
+application-mongo-local:
+  yaml:
+
+#Expose all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+movies-api:
+  version: 2.0
+  
+  

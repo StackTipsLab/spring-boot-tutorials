@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.stacktips</groupId>
-    <artifactId>testing-movies-api</artifactId>
+    <artifactId>testing-spring-boot-mongodb-testcontainer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>movies-api</name>
     <description>Demo project for Spring Boot</description>
