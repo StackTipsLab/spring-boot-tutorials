@@ -17,7 +17,7 @@ jobs:
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://stacktips.com/rss/topics/spring-boot"
-          max_post_count: 20
+          max_post_count: 30
       # - name: Pull Youtube feed
       #   uses: gautamkrishnar/blog-post-workflow@master
       #   with:
