@@ -25,4 +25,12 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Performing MongoDB CRUD Operation in Spring Boot](https://stacktips.com/articles/mongodb-crud-operation-in-spring-boot)
 - [Most Commonly Used Annotations in Spring Boot](https://stacktips.com/articles/spring-boot-annotations)
 - [Understanding Spring Boot Project Structure](https://stacktips.com/articles/spring-boot-project-structure)
+- [Getting Started With Spring Boot](https://stacktips.com/articles/getting-started-with-spring-boot)
+- [How to Change Spring Boot Default Port?](https://stacktips.com/articles/how-to-change-spring-boot-default-port)
+- [How to Consume REST API in Spring Boot Using RestTemplate?](https://stacktips.com/articles/calling-rest-services-using-resttemplate)
+- [How to Execute Code on Spring Boot Application Startup?](https://stacktips.com/articles/how-to-execute-code-on-spring-boot-application-startup)
+- [How to Configure Swagger2 in Spring Boot Application?](https://stacktips.com/articles/how-to-configure-swagger2-in-spring-boot-application)
+- [How to Enable GZIP Compression in Spring Boot?](https://stacktips.com/articles/enable-gzip-compression-for-spring-boot-response)
+- [Integrate Apache Tiles3 to Spring Boot Web MVC Application](https://stacktips.com/articles/integrate-tiles3-to-spring-boot)
+- [Using H2 In-Memory Database in Spring Boot](https://stacktips.com/articles/using-h2-in-memory-database-in-spring-boot)
 <!-- BLOG-POST-LIST:END -->
