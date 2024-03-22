@@ -5,6 +5,9 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 ### Recent Spring Boot Tutorials
 
 <!-- BLOG-POST-LIST:START -->
+- [Understanding Spring Boot Project Structure](https://stacktips.com/courses/spring-boot-for-beginners/understanding-spring-boot-project-structure)
+- [Logging in Spring Boot](https://stacktips.com/courses/spring-boot-for-beginners/logging-in-spring-boot)
+- [Dependency Injection in Spring Boot](https://stacktips.com/courses/spring-boot-for-beginners/dependency-injection-in-spring-boot)
 - [Testing Spring Boot Repository Using MongoDB Testcontainers](https://stacktips.com/articles/testing-spring-boot-repository-using-mongodb-testcontainers)
 - [Choosing from Multiple Bean Implementations in Spring Boot](https://stacktips.com/articles/choose-from-multiple-bean-types-springboot)
 - [Dynamic Scheduling in Quartz with Spring Boot Actuators](https://stacktips.com/articles/dynamic-scheduling-in-quartz-with-spring-boot-actuators)
@@ -32,5 +35,4 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [How to Configure Swagger2 in Spring Boot Application?](https://stacktips.com/articles/how-to-configure-swagger2-in-spring-boot-application)
 - [How to Enable GZIP Compression in Spring Boot?](https://stacktips.com/articles/enable-gzip-compression-for-spring-boot-response)
 - [Integrate Apache Tiles3 to Spring Boot Web MVC Application](https://stacktips.com/articles/integrate-tiles3-to-spring-boot)
-- [Using H2 In-Memory Database in Spring Boot](https://stacktips.com/articles/using-h2-in-memory-database-in-spring-boot)
 <!-- BLOG-POST-LIST:END -->
