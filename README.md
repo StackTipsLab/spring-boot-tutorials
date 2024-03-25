@@ -23,7 +23,7 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Introduction to Spring Boot Framework](https://stacktips.com/courses/spring-boot-for-beginners/introduction-to-spring-boot-framework)
 - [How to Use Interceptor in Spring Boot Application](https://stacktips.com/articles/how-to-use-interceptor-in-spring-boot)
 - [How to Add Context Path to a Spring Boot Application](https://stacktips.com/articles/add-context-path-to-a-spring-boot-application)
-- [What is WebClient? How to use WebClient in Java SpringBoot?](https://stacktips.com/articles/what-is-webclient-how-to-use-webclient-in-java-springboot)
+- [Calling HTTP Services with WebClient in Spring Boot](https://stacktips.com/articles/what-is-webclient-how-to-use-webclient-in-java-springboot)
 - [How to Connect to Multiple Mongo Databases in SpringBoot](https://stacktips.com/articles/how-to-connect-to-multiple-mongo-databases-in-springboot)
 - [Performing MongoDB CRUD Operation in Spring Boot](https://stacktips.com/articles/mongodb-crud-operation-in-spring-boot)
 - [Most Commonly Used Annotations in Spring Boot](https://stacktips.com/articles/spring-boot-annotations)
