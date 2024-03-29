@@ -7,7 +7,7 @@ Flyway supports almost all popular databases including Oracle, SQL Server, DB2, 
 In this tutorial we will create a Spring Boot application to deal with MySQL8 database migration using Flyway.  This example uses Java 17, Spring Boot 3.2.4 and MySQL 8.x. For the database operation we will use Spring boot JPA.
 
 Read full article here: 
-### [Flyway for Database Migration in Spring Boot](https://stacktips.com/articles/dynamic-scheduling-in-quartz-with-spring-boot-actuators)
+### [Flyway for Database Migration in Spring Boot](https://stacktips.com/articles/using-flyway-for-database-migration-in-spring-boot)
 
 
 ### Related topics:
