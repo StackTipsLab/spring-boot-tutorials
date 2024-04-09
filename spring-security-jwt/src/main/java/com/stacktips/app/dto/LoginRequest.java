@@ -12,7 +12,7 @@ import javax.validation.constraints.Email;
 @AllArgsConstructor
 public class LoginRequest {
     @Email(message = "invalid email address")
-    private String email;
+    String email;
 
-    private String password;
+    String password;
 }

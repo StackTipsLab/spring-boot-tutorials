@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.stacktips.app.entities.JwtUserDetails;
+import com.stacktips.app.security.JwtUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class JwtTokenProvider {
+
     private final Algorithm algorithm;
     private final JWTVerifier verifier;
     private final String issuer;

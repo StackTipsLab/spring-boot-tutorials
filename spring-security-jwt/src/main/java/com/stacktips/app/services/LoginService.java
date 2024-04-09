@@ -2,7 +2,7 @@ package com.stacktips.app.services;
 
 import com.stacktips.app.dto.LoginRequest;
 import com.stacktips.app.dto.TokenResponse;
-import com.stacktips.app.entities.JwtUserDetails;
+import com.stacktips.app.security.JwtUserDetails;
 import com.stacktips.app.exception.AccountNotActivatedException;
 import com.stacktips.app.exception.InvalidPasswordException;
 import com.stacktips.app.exception.UserNotFoundException;
@@ -22,7 +22,8 @@ public class LoginService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse loginUser(LoginRequest loginRequest) throws UserNotFoundException {
-        JwtUserDetails userDetails = userDetailsService.loadUserByUsername(loginRequest.getEmail());
+        JwtUserDetails userDetails = userDetailsService.loadUserByUsername(
+                loginRequest.getEmail());
         isAccountActive(userDetails);
 
         try {

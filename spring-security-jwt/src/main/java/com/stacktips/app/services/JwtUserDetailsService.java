@@ -1,7 +1,7 @@
 package com.stacktips.app.services;
 
-import com.stacktips.app.entities.JwtUserDetails;
-import com.stacktips.app.entities.MyUser;
+import com.stacktips.app.security.JwtUserDetails;
+import com.stacktips.app.entities.User;
 import com.stacktips.app.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,26 +15,31 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class JwtUserDetailsService implements UserDetailsService {
+
     private UserRepository userRepository;
+
+
+    public Optional<User> getUser(Long id) {
+        return userRepository.findById(id);
+    }
 
     @Override
     public JwtUserDetails loadUserByUsername(final String username) {
-        Optional<MyUser> myUserOptional = userRepository.findByEmail(username);
+        Optional<User> myUserOptional = userRepository.findByEmail(username);
         if (myUserOptional.isEmpty()) {
             return null;
         }
 
-        MyUser myUser = myUserOptional.get();
-
-        List<SimpleGrantedAuthority> authorities = myUser.getPrivileges()
+        User user = myUserOptional.get();
+        List<SimpleGrantedAuthority> authorities = user.getPrivileges()
                 .stream()
                 .map(p -> new SimpleGrantedAuthority(p.getName()))
                 .toList();
 
         return new JwtUserDetails(
-                myUser.getId(),
+                user.getId(),
                 username,
-                myUser.getPassword(),
+                user.getPassword(),
                 authorities);
     }
 }
