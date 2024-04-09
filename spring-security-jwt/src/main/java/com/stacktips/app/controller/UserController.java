@@ -3,7 +3,7 @@ package com.stacktips.app.controller;
 import com.stacktips.app.dto.UserResponse;
 import com.stacktips.app.entities.User;
 import com.stacktips.app.exception.UserNotFoundException;
-import com.stacktips.app.services.JwtUserDetailsService;
+import com.stacktips.app.services.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final JwtUserDetailsService userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
 
     @GetMapping(path = "/{userId}")
     public UserResponse getUser(@PathVariable Long userId) {

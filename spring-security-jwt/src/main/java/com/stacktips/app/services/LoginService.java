@@ -2,51 +2,54 @@ package com.stacktips.app.services;
 
 import com.stacktips.app.dto.LoginRequest;
 import com.stacktips.app.dto.TokenResponse;
-import com.stacktips.app.security.JwtUserDetails;
-import com.stacktips.app.exception.AccountNotActivatedException;
-import com.stacktips.app.exception.InvalidPasswordException;
+import com.stacktips.app.exception.AuthException;
 import com.stacktips.app.exception.UserNotFoundException;
+import com.stacktips.app.security.UserDetails;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class LoginService {
 
+    private static final Logger log = LoggerFactory.getLogger(LoginService.class);
     private final AuthenticationManager authenticationManager;
-    private final JwtUserDetailsService userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse loginUser(LoginRequest loginRequest) throws UserNotFoundException {
-        JwtUserDetails userDetails = userDetailsService.loadUserByUsername(
+        UserDetails userDetails = userDetailsService.loadUserByUsername(
                 loginRequest.getEmail());
-        isAccountActive(userDetails);
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                loginRequest.getEmail(), loginRequest.getPassword());
 
         try {
-            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                    userDetails.getUsername(), loginRequest.getPassword());
             Authentication authenticate = authenticationManager.authenticate(token);
             if (authenticate.isAuthenticated()) {
-                String jwtToken = jwtTokenProvider.generateToken(userDetails);
                 return TokenResponse.builder()
                         .success(true)
-                        .message("Token generated successfully")
-                        .expiresIn(jwtTokenProvider.getExpirationInSeconds(jwtToken))
-                        .token(jwtToken).build();
+                        .token(jwtTokenProvider.generateToken(userDetails))
+                        .build();
             }
         } catch (BadCredentialsException e) {
-            throw new InvalidPasswordException("Invalid password for username: " + userDetails.getUsername());
+            log.error(e.getMessage(), e);
+            throw new AuthException("Invalid credentials");
+        } catch (DisabledException e) {
+            log.error(e.getMessage(), e);
+            throw new AuthException("Account not activated");
+        } catch (AuthenticationException e) {
+            log.error(e.getMessage(), e);
+            throw new AuthException(e.getMessage());
         }
         throw new IllegalStateException("Unexpected error during authentication");
     }
 
-    private static void isAccountActive(JwtUserDetails userDetails) {
-        if (!userDetails.isEnabled()) {
-            throw new AccountNotActivatedException("Your account is not active.");
-        }
-    }
 }

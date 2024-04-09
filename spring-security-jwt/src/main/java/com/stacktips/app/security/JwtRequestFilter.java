@@ -2,7 +2,7 @@ package com.stacktips.app.security;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.stacktips.app.services.JwtTokenProvider;
-import com.stacktips.app.services.JwtUserDetailsService;
+import com.stacktips.app.services.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,7 +26,7 @@ import java.util.Optional;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     private JwtTokenProvider jwtTokenProvider;
-    private JwtUserDetailsService jwtUserDetailsService;
+    private UserDetailsServiceImpl userDetailsServiceImpl;
 
     @Override
     protected void doFilterInternal(
@@ -48,7 +48,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 .filter(Objects::nonNull)
                 .findFirst();
 
-        validToken.map(t -> jwtUserDetailsService.loadUserByUsername(t.getClaim("username").asString()))
+        validToken.map(t -> userDetailsServiceImpl.loadUserByUsername(t.getClaim("username").asString()))
                 .map(userDetails -> new UsernamePasswordAuthenticationToken(userDetails, null,
                         userDetails.getAuthorities()))
                 .ifPresent(upat -> {

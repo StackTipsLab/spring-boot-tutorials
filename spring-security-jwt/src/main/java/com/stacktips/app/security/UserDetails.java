@@ -6,16 +6,14 @@ import org.springframework.security.core.userdetails.User;
 import java.util.Collection;
 import java.util.Objects;
 
-public class JwtUserDetails extends User {
+public class UserDetails extends User {
 
     public final Long id;
 
-    public JwtUserDetails(
-            Long id,
-            String username,
-            String hash,
-            Collection<? extends GrantedAuthority> authorities) {
-        super(username, hash, authorities);
+    public UserDetails(String username, String password, boolean enabled, boolean accountNonExpired,
+            boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities,
+            Long id) {
+        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
         this.id = id;
     }
 
@@ -30,7 +28,7 @@ public class JwtUserDetails extends User {
         if (!super.equals(o)) {
             return false;
         }
-        JwtUserDetails that = (JwtUserDetails) o;
+        UserDetails that = (UserDetails) o;
         return Objects.equals(id, that.id);
     }
 
@@ -38,4 +36,6 @@ public class JwtUserDetails extends User {
     public int hashCode() {
         return Objects.hash(super.hashCode(), id);
     }
+
+
 }

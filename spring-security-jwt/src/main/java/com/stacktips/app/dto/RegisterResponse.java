@@ -14,5 +14,4 @@ import lombok.ToString;
 public class RegisterResponse {
 
    boolean success;
-   String message;
 }

@@ -1,6 +1,10 @@
 package com.stacktips.app.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @ToString
@@ -9,7 +13,5 @@ import lombok.*;
 @AllArgsConstructor
 public class TokenResponse {
     boolean success;
-    String message;
     String token;
-    long expiresIn;
 }

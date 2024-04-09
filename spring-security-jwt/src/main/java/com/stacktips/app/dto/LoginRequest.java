@@ -1,6 +1,10 @@
 package com.stacktips.app.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.validation.constraints.Email;
 
@@ -11,6 +15,7 @@ import javax.validation.constraints.Email;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginRequest {
+
     @Email(message = "invalid email address")
     String email;
 

@@ -4,16 +4,13 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.stacktips.app.security.JwtUserDetails;
+import com.stacktips.app.security.UserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.stream.Collectors;
 
 
@@ -36,7 +33,7 @@ public class JwtTokenProvider {
         this.verifier = JWT.require(this.algorithm).build();
     }
 
-    public String generateToken(final JwtUserDetails userDetails) {
+    public String generateToken(final UserDetails userDetails) {
         return JWT.create()
                 .withClaim("username", userDetails.getUsername())
                 .withClaim("id", userDetails.id)
@@ -47,11 +44,6 @@ public class JwtTokenProvider {
                 .sign(this.algorithm);
     }
 
-    public long getExpirationInSeconds(String token) {
-        Date expiration = verify(token).getExpiresAt();
-        Instant now = Instant.now();
-        return ChronoUnit.SECONDS.between(now, expiration.toInstant());
-    }
 
     public DecodedJWT verify(final String token) {
         try {
@@ -62,7 +54,7 @@ public class JwtTokenProvider {
         }
     }
 
-    private String getUserRoles(final UserDetails userDetails) {
+    private String getUserRoles(final org.springframework.security.core.userdetails.UserDetails userDetails) {
         return userDetails.getAuthorities().stream().
                 map(Object::toString).
                 collect(Collectors.joining(","));

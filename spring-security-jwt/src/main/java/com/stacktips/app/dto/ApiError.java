@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class ApiError {
 
     String message;
-    int code;
 }

@@ -27,4 +27,5 @@ public class LoginController {
     public ResponseEntity<TokenResponse> login(@RequestBody @Valid LoginRequest request) throws UserNotFoundException {
         return ResponseEntity.ok(loginService.loginUser(request));
     }
+
 }

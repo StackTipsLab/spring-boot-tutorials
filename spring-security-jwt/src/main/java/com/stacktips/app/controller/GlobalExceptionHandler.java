@@ -1,7 +1,8 @@
 package com.stacktips.app.controller;
 
 import com.stacktips.app.dto.ApiError;
-import com.stacktips.app.exception.UserAlreadyExistsException;
+import com.stacktips.app.exception.AuthException;
+import com.stacktips.app.exception.DuplicateUserException;
 import com.stacktips.app.exception.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,14 +21,18 @@ public class GlobalExceptionHandler {
                 .build();
     }
 
-    @ExceptionHandler(UserAlreadyExistsException.class)
-    ResponseEntity<ApiError> handleNotFoundException(UserAlreadyExistsException ex) {
-        log.error("Error", ex);
+    @ExceptionHandler(AuthException.class)
+    ResponseEntity<ApiError> handleAuthException(AuthException ex) {
+        ApiError apiError = ApiError.builder().message(ex.getMessage()).build();
+        return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(DuplicateUserException.class)
+    ResponseEntity<ApiError> handleUserAlreadyExistsException(DuplicateUserException ex) {
         ApiError apiError = ApiError.builder()
-                .message("User exist!")
-                .code(HttpStatus.BAD_REQUEST.value())
+                .message(ex.getMessage())
                 .build();
-        return ResponseEntity.badRequest().body(apiError);
+        return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
     }
 
 }

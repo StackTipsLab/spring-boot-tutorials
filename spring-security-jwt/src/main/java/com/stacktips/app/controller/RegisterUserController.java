@@ -21,8 +21,6 @@ public class RegisterUserController {
     @PostMapping("/register")
     public RegisterResponse registerUser(@RequestBody RegisterRequest request) {
         registrationService.registerUser(request);
-        return RegisterResponse.builder().success(true)
-                .message("User has been created")
-                .build();
+        return RegisterResponse.builder().success(true).build();
     }
 }
