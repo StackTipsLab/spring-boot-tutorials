@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MultipartFileUploadRestApiApplication {
+public class MultipartUploadApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MultipartFileUploadRestApiApplication.class, args);
+        SpringApplication.run(MultipartUploadApplication.class, args);
     }
 
 }
