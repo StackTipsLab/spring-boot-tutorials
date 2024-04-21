@@ -1,4 +1,3 @@
--- Inserting data into the 'movie' table
 INSERT INTO movie (title, headline, language, region, thumbnail, rating)
 VALUES ('Inception', 'A thief who steals corporate secrets through the use of dream-sharing technology.', 'English',
         'USA', 'inception.jpg', 'PG13'),
