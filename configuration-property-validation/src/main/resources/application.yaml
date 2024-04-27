@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configuration-property-validation
+
+importer:
+  service:
+    filePath: /nfs/files
+    fileType: '.csv'
+    threadPoolSize: 3
