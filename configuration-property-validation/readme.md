@@ -1,6 +1,6 @@
 # Validating @ConfigurationProperties in Spring Boot
 
-The @ConfigurationProperties annotation in Spring Boot is used to bind configuration parameters typically from properties or YAML files to a Java class.
+The `@ConfigurationProperties` annotation in Spring Boot is used to bind configuration parameters typically from properties or YAML files to a Java class.
 
 But, did you know you also can validate configuration properties at spring application startup with @ConfigurationProperties annotation?
 
