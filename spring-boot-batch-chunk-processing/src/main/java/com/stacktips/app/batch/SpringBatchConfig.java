@@ -31,7 +31,8 @@ public class SpringBatchConfig {
                 .resource(new ClassPathResource("customers.csv"))
                 .delimited()
                 .delimiter(",")
-                .names("index", "customerId", "firstName", "lastName", "company", "city", "country", "phone1", "phone2",
+                .names("index", "customerId", "firstName", "lastName", "company", "city",
+                        "country", "phone1", "phone2",
                         "email", "subscriptionDate", "website")
                 .fieldSetMapper(fieldSet -> Customer.builder()
                         .customerId(fieldSet.readString("customerId"))
