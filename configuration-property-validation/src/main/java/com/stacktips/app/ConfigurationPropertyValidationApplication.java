@@ -2,11 +2,12 @@ package com.stacktips.app;
 
 import com.stacktips.app.service.ImportService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @SpringBootApplication
 public class ConfigurationPropertyValidationApplication implements CommandLineRunner {
 
