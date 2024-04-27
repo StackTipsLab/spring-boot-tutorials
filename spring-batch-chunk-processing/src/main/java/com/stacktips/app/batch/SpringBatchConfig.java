@@ -65,8 +65,8 @@ public class SpringBatchConfig {
                     @Override
                     public void validate(JobParameters parameters) throws JobParametersInvalidException {
                         String ignoreCountry = parameters.getString("ignoreCountry");
-                        if (ignoreCountry.equals("Costa Rica")) {
-                            //TODO Validation logic goes here.
+                        if ("Costa Rica".equals(ignoreCountry)) {
+                            throw new JobParametersInvalidException("Country ignored");
                         }
                     }
                 })

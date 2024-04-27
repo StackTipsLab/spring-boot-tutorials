@@ -21,6 +21,7 @@ public class ApplicationStartEvent {
     public void onReadyEvent() throws JobExecutionException {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addString("ignoreCountry", "India")
+                .addLong("startTime",System.currentTimeMillis())
                 .toJobParameters();
 
         jobLauncher.run(csvImporterJob, jobParameters);
