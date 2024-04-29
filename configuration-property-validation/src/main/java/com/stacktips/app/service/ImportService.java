@@ -14,7 +14,5 @@ public class ImportService {
 
     public void importData() {
         log.info("Importing data {}", importerConfig.toString());
-
-        //TODO import logic goes here
     }
 }

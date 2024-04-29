@@ -9,16 +9,16 @@ public class UserService {
     final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private final EmailService emailService;
-    private final UserDao userDao;
+    private final UserRepository userRepository;
 
     public UserService() {
         emailService = new EmailService();
-        userDao = new UserDao();
+        userRepository = new UserRepository();
     }
 
 
     public void registerUser(User user) {
-        userDao.saveUser(user);
+        userRepository.saveUser(user);
         logger.info("User registered successfully!");
 
         emailService.emailUser("User registered successfully!",

@@ -5,5 +5,5 @@ spring:
 importer:
   service:
     filePath: /nfs/files
-    fileType: '.csv'
+    fileType: '.md'
     threadPoolSize: 3
