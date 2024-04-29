@@ -5,6 +5,7 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 ### Recent Spring Boot Tutorials
 
 <!-- BLOG-POST-LIST:START -->
+- [Digging into HTTP Clients in Spring: From RestTemplate to HTTP Interface](https://stacktips.com/articles/rest-clients-in-spring)
 - [Using Flyway for Database Migration in Spring Boot](https://stacktips.com/articles/using-flyway-for-database-migration-in-spring-boot)
 - [Understanding Spring Boot Project Structure](https://stacktips.com/courses/spring-boot-for-beginners/understanding-spring-boot-project-structure)
 - [Logging in Spring Boot](https://stacktips.com/courses/spring-boot-for-beginners/logging-in-spring-boot)
@@ -34,5 +35,4 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [How to Consume REST API in Spring Boot Using RestTemplate?](https://stacktips.com/articles/calling-rest-services-using-resttemplate)
 - [How to Execute Code on Spring Boot Application Startup?](https://stacktips.com/articles/how-to-execute-code-on-spring-boot-application-startup)
 - [How to Configure Swagger2 in Spring Boot Application?](https://stacktips.com/articles/how-to-configure-swagger2-in-spring-boot-application)
-- [How to Enable GZIP Compression in Spring Boot?](https://stacktips.com/articles/enable-gzip-compression-for-spring-boot-response)
 <!-- BLOG-POST-LIST:END -->
