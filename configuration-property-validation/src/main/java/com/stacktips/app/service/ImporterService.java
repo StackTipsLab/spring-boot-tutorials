@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ImportService {
+public class ImporterService {
 
     private final ImporterConfig importerConfig;
 

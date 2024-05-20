@@ -5,5 +5,5 @@ spring:
 importer:
   service:
     filePath: /nfs/files
-    fileType: '.md'
-    threadPoolSize: 3
+    fileType: '.docx'
+    threadPoolSize: 30

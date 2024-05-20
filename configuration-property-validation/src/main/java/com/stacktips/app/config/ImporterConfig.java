@@ -1,6 +1,9 @@
 package com.stacktips.app.config;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,11 +19,11 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties(prefix = "importer.service")
 public class ImporterConfig {
 
-    @NotNull
+    @NotEmpty
     String filePath;
 
-    @NotNull
-    @Pattern(regexp = "\\.csv$|\\.txt")
+    @NotEmpty
+    @Pattern(regexp = "\\.csv$|\\.txt$")
     String fileType;
 
     @Positive

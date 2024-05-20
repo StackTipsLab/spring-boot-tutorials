@@ -1,7 +1,6 @@
 package com.stacktips.app;
 
-import com.stacktips.app.service.ImportService;
-import lombok.AllArgsConstructor;
+import com.stacktips.app.service.ImporterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ConfigurationPropertyValidationApplication implements CommandLineRunner {
 
-    private final ImportService service;
+    private final ImporterService service;
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigurationPropertyValidationApplication.class, args);
