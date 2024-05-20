@@ -1,4 +1,4 @@
-package com.stacktips.app.models;
+package com.stacktips.app.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -19,15 +19,15 @@ import java.time.LocalDate;
 public class Customer {
 
     @Id
-    private String customerId;
-    private String firstName;
-    private String lastName;
-    private String company;
-    private String city;
-    private String country;
-    private String phone1;
-    private String phone2;
-    private String email;
-    private LocalDate subscriptionDate;
-    private String website;
+    String customerId;
+    String firstName;
+    String lastName;
+    String company;
+    String city;
+    String country;
+    String phone1;
+    String phone2;
+    String email;
+    LocalDate subscriptionDate;
+    String website;
 }
