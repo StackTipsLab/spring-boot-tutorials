@@ -5,6 +5,7 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 ### Recent Spring Boot Tutorials
 
 <!-- BLOG-POST-LIST:START -->
+- [Importing CSV Data into PostgreSQL using Spring Boot Batch](https://stacktips.com/articles/importing-csv-data-into-postgresql-using-spring-boot-batch)
 - [Digging into HTTP Clients in Spring: From RestTemplate to HTTP Interface](https://stacktips.com/articles/rest-clients-in-spring)
 - [Using Flyway for Database Migration in Spring Boot](https://stacktips.com/articles/using-flyway-for-database-migration-in-spring-boot)
 - [Understanding Spring Boot Project Structure](https://stacktips.com/courses/spring-boot-for-beginners/understanding-spring-boot-project-structure)
@@ -34,5 +35,4 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [How to Change Spring Boot Default Port?](https://stacktips.com/articles/how-to-change-spring-boot-default-port)
 - [How to Consume REST API in Spring Boot Using RestTemplate?](https://stacktips.com/articles/calling-rest-services-using-resttemplate)
 - [How to Execute Code on Spring Boot Application Startup?](https://stacktips.com/articles/how-to-execute-code-on-spring-boot-application-startup)
-- [How to Configure Swagger2 in Spring Boot Application?](https://stacktips.com/articles/how-to-configure-swagger2-in-spring-boot-application)
 <!-- BLOG-POST-LIST:END -->
