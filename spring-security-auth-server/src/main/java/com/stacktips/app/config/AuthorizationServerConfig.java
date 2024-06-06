@@ -15,17 +15,13 @@ import org.springframework.security.oauth2.server.authorization.client.InMemoryR
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
-import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
 import org.springframework.security.oauth2.server.authorization.settings.AuthorizationServerSettings;
 import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 
 import java.time.Duration;
 import java.util.UUID;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class AuthorizationServerConfig {
@@ -78,20 +74,6 @@ public class AuthorizationServerConfig {
         return new NimbusJwtEncoder(jwkSource);
     }
 
-//        OAuth2AuthorizationServerConfigurer authorizationServerConfigurer =
-//                        new OAuth2AuthorizationServerConfigurer();
-//                RequestMatcher endpointsMatcher = authorizationServerConfigurer
-//                        .getEndpointsMatcher();
-//
-//                http
-//                    .requestMatcher(endpointsMatcher)
-//                    .authorizeRequests(authorizeRequests ->
-//                        authorizeRequests.anyRequest().authenticated()
-//                    )
-//                    .csrf(csrf -> csrf.ignoringRequestMatchers("/auth/token"))
-//                    .apply(authorizationServerConfigurer);
-//
-//                return http.build();
 
     @Bean
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -99,23 +81,23 @@ public class AuthorizationServerConfig {
         return http.formLogin(Customizer.withDefaults()).build();
     }
 
-//    @Bean
-//    public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception {
-//
-//            OAuth2AuthorizationServerConfigurer authorizationServerConfigurer =
-//                    new OAuth2AuthorizationServerConfigurer();
-//            OAuth2AuthorizationServerConfigurer serverConfigurer = authorizationServerConfigurer
-//                    .tokenEndpoint(tokenEndpoint -> tokenEndpoint.accessTokenResponseHandler(null));
-//
-//            http.with(serverConfigurer, Customizer.withDefaults())
-//                    .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
-//                    .csrf(csrf -> csrf.ignoringRequestMatchers("/oauth2/token"));
-////                    .formLogin(withDefaults());
-//            return http.build();
-//
-//    }
 
+  /*
+    // Custom exception response
+    @Bean
+    public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http,
+                                                                      CustomAuthenticationEntryPoint customAuthenticationEntryPoint) throws Exception {
+        OAuth2AuthorizationServerConfigurer authorizationServerConfigurer =
+                new OAuth2AuthorizationServerConfigurer();
+        RequestMatcher endpointsMatcher = authorizationServerConfigurer
+                .getEndpointsMatcher();
 
+        http.with(authorizationServerConfigurer, Customizer.withDefaults())
+                    .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
+                    .csrf(csrf -> csrf.ignoringRequestMatchers("/oauth2/token"));
+                    .exceptionHandling((ex) -> ex.authenticationEntryPoint(customAuthenticationEntryPoint));
+        return http.build();
+    }*/
 
 }
 

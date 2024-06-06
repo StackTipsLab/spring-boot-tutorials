@@ -27,26 +27,6 @@ public class WebSecurityConfig {
         );
     }
 
-//
-//    public ClientDetailsService clientDetailsService() {
-//        return new ClientDetailsService() {
-//            @Override
-//            public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
-//                BaseClientDetails details = new BaseClientDetails();
-//                details.setClientId(clientId);
-//                details.setAuthorizedGrantTypes(Arrays.asList("authorization_code") );
-//                details.setScope(Arrays.asList("read, trust"));
-//                details.setRegisteredRedirectUri(Collections.singleton("http://anywhere.com"));
-//                details.setResourceIds(Arrays.asList("oauth2-resource"));
-//                Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-//                authorities.add(new SimpleGrantedAuthority("ROLE_CLIENT"));
-//                details.setAuthorities(authorities);
-//                return details;
-//            }
-//        };
-//    }  //*/
-
-
     @Bean
     public AuthenticationManager authenticationManager(
             final AuthenticationConfiguration authenticationConfiguration) throws Exception {
