@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-security-demo
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080
+auth-server:
+  oauth2:
+    client-id: 'test-id'
+    client-secret: 'test-secret'
+    scope: write
+    access-token-validity: 3600 #seconds
+
+logging:
+  level:
+    org.springframework.security: trace
