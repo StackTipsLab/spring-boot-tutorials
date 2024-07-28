@@ -5,6 +5,7 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 ### Recent Spring Boot Tutorials
 
 <!-- BLOG-POST-LIST:START -->
+- [Essential MongoDB Optimization Tips for Spring Boot Application](https://stacktips.com/articles/essential-mongodb-optimization-tips-for-spring-boot)
 - [Importing CSV Data into PostgreSQL using Spring Boot Batch](https://stacktips.com/articles/importing-csv-data-into-postgresql-using-spring-boot-batch)
 - [Digging into HTTP Clients in Spring: From RestTemplate to HTTP Interface](https://stacktips.com/articles/rest-clients-in-spring)
 - [Using Flyway for Database Migration in Spring Boot](https://stacktips.com/articles/using-flyway-for-database-migration-in-spring-boot)
@@ -34,5 +35,4 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Getting Started With Spring Boot](https://stacktips.com/articles/getting-started-with-spring-boot)
 - [How to Change Spring Boot Default Port?](https://stacktips.com/articles/how-to-change-spring-boot-default-port)
 - [How to Consume REST API in Spring Boot Using RestTemplate?](https://stacktips.com/articles/calling-rest-services-using-resttemplate)
-- [How to Execute Code on Spring Boot Application Startup?](https://stacktips.com/articles/how-to-execute-code-on-spring-boot-application-startup)
 <!-- BLOG-POST-LIST:END -->
