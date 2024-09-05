@@ -19,7 +19,7 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Working with Spring Boot Actuators](https://stacktips.com/articles/working-with-spring-boot-actuators)
 - [Validating @ConfigurationProperties in Spring Boot](https://stacktips.com/articles/validating-configurationproperties-in-spring-boot)
 - [Task Execution and Scheduling in Spring Boot](https://stacktips.com/articles/task-execution-and-scheduling-in-spring-boot)
-- [Handling XML Request and Response in Spring Boot REST](https://stacktips.com/articles/handling-xml-request-and-response-in-spring-boot-rest)
+- [Working XML-Based REST API with Spring Boot](https://stacktips.com/articles/handling-xml-request-and-response-in-spring-boot-rest)
 - [How to Validate the @PathVariable in Spring Boot?](https://stacktips.com/articles/how-to-validate-the-pathvariable-in-spring-boot)
 - [Testing Spring Boot REST API using Mockito and MockMvc](https://stacktips.com/courses/spring-boot-for-beginners/testing-spring-boot-using-mockito-and-mockmvc)
 - [Creating First Spring Boot Application](https://stacktips.com/courses/spring-boot-for-beginners/creating-first-spring-boot-project)
