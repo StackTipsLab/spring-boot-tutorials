@@ -12,11 +12,11 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/hello",
-    produces = {MediaType.APPLICATION_JSON_VALUE})
+        produces = {MediaType.APPLICATION_JSON_VALUE})
 public class HelloController {
 
     @GetMapping
-    public Map<String, String> getMovies() {
+    public Map<String, String> hello() {
         return Collections.singletonMap("hello", "world!");
     }
 }

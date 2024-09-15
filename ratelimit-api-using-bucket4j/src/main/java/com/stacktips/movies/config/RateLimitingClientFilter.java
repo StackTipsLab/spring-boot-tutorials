@@ -48,10 +48,10 @@ public class RateLimitingClientFilter implements Filter {
         }
     }
 
-    private Bucket createNewBucket(String apiKey) {
-        BucketConfig.ClientBucketConfig config = bucketConfig.getClients().get(apiKey);
+    private Bucket createNewBucket(String clientId) {
+        BucketConfig.ClientBucketConfig config = bucketConfig.getClients().get(clientId);
         if (config == null) {
-            throw new IllegalArgumentException("Unknown API key: " + apiKey);
+            throw new IllegalArgumentException("Unknown client: " + clientId);
         }
 
         return Bucket.builder()

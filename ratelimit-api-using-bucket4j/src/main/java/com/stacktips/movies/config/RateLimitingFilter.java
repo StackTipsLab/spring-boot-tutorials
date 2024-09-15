@@ -12,7 +12,6 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class RateLimitingFilter implements Filter {
-
     private final Bucket bucket;
 
     public RateLimitingFilter() {
@@ -24,18 +23,23 @@ public class RateLimitingFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse response,
-                         FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse response,
+                         FilterChain filterChain)
+            throws IOException, ServletException {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         ConsumptionProbe probe = bucket.tryConsumeAndReturnRemaining(1);
 
         if (probe.isConsumed()) {
-            httpResponse.setHeader("X-Rate-Limit-Remaining", String.valueOf(probe.getRemainingTokens()));
+            httpResponse.setHeader("X-Rate-Limit-Remaining",
+                    String.valueOf(probe.getRemainingTokens()));
+
+            //continue with the request
             filterChain.doFilter(servletRequest, httpResponse);
         } else {
             httpResponse.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
-            httpResponse.setHeader("X-Rate-Limit-Retry-After-Seconds",
-                    String.valueOf(TimeUnit.NANOSECONDS.toSeconds(probe.getNanosToWaitForRefill())));
+            long waitUntil = TimeUnit.NANOSECONDS.toSeconds(probe.getNanosToWaitForRefill());
+            httpResponse.setHeader("X-Rate-Limit-Retry-After-Seconds", String.valueOf(waitUntil));
             httpResponse.setContentType(MediaType.TEXT_PLAIN_VALUE);
             httpResponse.getWriter().write("Too many requests");
         }
