@@ -5,6 +5,8 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 ### Recent Spring Boot Tutorials
 
 <!-- BLOG-POST-LIST:START -->
+- [Configuration Management in Spring Boot](https://stacktips.com/courses/spring-boot-for-beginners/configuration-management-in-spring-boot)
+- [Creating First Spring Boot Application](https://stacktips.com/courses/spring-boot-for-beginners/creating-first-spring-boot-application)
 - [Prerequisites for Spring Boot Development](https://stacktips.com/courses/spring-boot-for-beginners/prerequisites-for-spring-boot-development)
 - [Spring, Spring Boot Interview Question Answers](https://stacktips.com/articles/spring-boot-interview-questions-and-answers)
 - [Essential MongoDB Optimization Tips for Spring Boot Application](https://stacktips.com/articles/essential-mongodb-optimization-tips-for-spring-boot)
@@ -24,7 +26,6 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Working XML-Based REST API with Spring Boot](https://stacktips.com/articles/handling-xml-request-and-response-in-spring-boot-rest)
 - [How to Validate the @PathVariable in Spring Boot?](https://stacktips.com/articles/how-to-validate-the-pathvariable-in-spring-boot)
 - [Testing Spring Boot REST API using Mockito and MockMvc](https://stacktips.com/courses/spring-boot-for-beginners/testing-spring-boot-using-mockito-and-mockmvc)
-- [Creating First Spring Boot Application](https://stacktips.com/courses/spring-boot-for-beginners/creating-first-spring-boot-project)
 - [Replace Embedded Tomcat Server with Jetty or Undertow in Spring Boot](https://stacktips.com/articles/replace-tomcat-with-jetty-or-undertow-in-spring-boot)
 - [Introduction to Spring Boot Framework](https://stacktips.com/courses/spring-boot-for-beginners/introduction-to-spring-boot-framework)
 - [How to Use Interceptor in Spring Boot Application](https://stacktips.com/articles/how-to-use-interceptor-in-spring-boot)
@@ -34,5 +35,4 @@ Source code for all spring boot tutorials and projects published on stacktips.co
 - [Performing MongoDB CRUD Operation in Spring Boot](https://stacktips.com/articles/mongodb-crud-operation-in-spring-boot)
 - [Most Commonly Used Annotations in Spring Boot](https://stacktips.com/articles/spring-boot-annotations)
 - [Understanding Spring Boot Project Structure](https://stacktips.com/articles/spring-boot-project-structure)
-- [Getting Started With Spring Boot](https://stacktips.com/articles/getting-started-with-spring-boot)
 <!-- BLOG-POST-LIST:END -->
