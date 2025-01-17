@@ -1,0 +1,10 @@
+rate-limiting:
+  clients:
+    client1:
+      capacity: 10
+      refill-tokens: 1
+      refill-duration: PT1M
+    client2:
+      capacity: 10
+      refill-tokens: 1
+      refill-duration: PT1M

@@ -2,19 +2,21 @@ package com.stacktips.movies.config;
 
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.ConsumptionProbe;
-import jakarta.servlet.FilterConfig;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+@RequiredArgsConstructor
 public class RateLimitingClientFilter implements Filter {
+
+    private final BucketConfig bucketConfig;
 
     private final ConcurrentHashMap<String, Bucket> buckets = new ConcurrentHashMap<>();
 
@@ -23,12 +25,12 @@ public class RateLimitingClientFilter implements Filter {
             throws IOException, ServletException {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-
-        String apiKey = httpRequest.getHeader("X-API-Key");
+        String apiKey = httpRequest.getHeader("X-Client-ID");
         if (apiKey == null) {
+
             httpResponse.setStatus(HttpStatus.BAD_REQUEST.value());
             httpResponse.setContentType(MediaType.TEXT_PLAIN_VALUE);
-            httpResponse.getWriter().write("Missing X-API-Key header");
+            httpResponse.getWriter().write("Missing X-Client-ID header");
             return;
         }
 
@@ -46,20 +48,16 @@ public class RateLimitingClientFilter implements Filter {
         }
     }
 
-    private Bucket createNewBucket(String apiKey) {
+    private Bucket createNewBucket(String clientId) {
+        BucketConfig.ClientBucketConfig config = bucketConfig.getClients().get(clientId);
+        if (config == null) {
+            throw new IllegalArgumentException("Unknown client: " + clientId);
+        }
+
         return Bucket.builder()
-                .addLimit(limit -> limit.capacity(10)
-                        .refillIntervally(1, Duration.ofMinutes(1)))
-                .build();
-    }
-
-    @Override
-    public void init(FilterConfig filterConfig) {
-
-    }
-
-    @Override
-    public void destroy() {
-
+                .addLimit(limit ->
+                        limit.capacity(config.getCapacity())
+                                .refillIntervally(config.getRefillTokens(), config.getRefillDuration())
+                ).build();
     }
 }

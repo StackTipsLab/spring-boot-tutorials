@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.notNullValue;
 
@@ -22,27 +23,27 @@ class RateLimitingClientFilterTest {
     @Test
     void testRateLimiting() {
         for (int i = 0; i < 10; i++) {
-            given().header("X-API-Key", "app1")
-                    .get("/api/1.0/movies").then()
+            given().header("X-Client-ID", "client1")
+                    .get("/hello").then()
                     .statusCode(200)
                     .header("X-Rate-Limit-Remaining", notNullValue());
         }
 
         for (int i = 0; i < 10; i++) {
-            given().header("X-API-Key", "app2")
-                    .get("/api/1.0/movies").then()
+            given().header("X-Client-ID", "client2")
+                    .get("/hello").then()
                     .statusCode(200)
                     .header("X-Rate-Limit-Remaining", notNullValue());
         }
 
-        given().header("X-API-Key", "app1")
-                .get("/api/1.0/movies")
+        given().header("X-Client-ID", "client1")
+                .get("/hello")
                 .then()
                 .statusCode(429)
                 .header("X-Rate-Limit-Retry-After-Seconds", notNullValue());
 
-        given().header("X-API-Key", "app2")
-                .get("/api/1.0/movies")
+        given().header("X-Client-ID", "client2")
+                .get("/hello")
                 .then()
                 .statusCode(429)
                 .header("X-Rate-Limit-Retry-After-Seconds", notNullValue());
