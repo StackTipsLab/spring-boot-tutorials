@@ -5,13 +5,12 @@ import com.stacktips.movies.models.Movie;
 import com.stacktips.movies.models.Movies;
 import com.stacktips.movies.services.MovieService;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/1.0/movies",
-        consumes = {MediaType.APPLICATION_XML_VALUE},
-        produces = {MediaType.APPLICATION_XML_VALUE}
+        produces = MediaType.APPLICATION_XML_VALUE,
+        consumes = MediaType.APPLICATION_XML_VALUE
 )
 public class MoviesController {
 
@@ -22,9 +21,8 @@ public class MoviesController {
     }
 
     @GetMapping
-    public ResponseEntity<Movies> getMovies() {
-        Movies movies = new Movies(movieService.getMovies());
-        return ResponseEntity.ok(movies);
+    public Movies getMovies() {
+        return new Movies(movieService.getMovies());
     }
 
     @PostMapping
